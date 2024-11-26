@@ -4,14 +4,20 @@ const rooms = [1, 2, 3, 4];
 let calledPasswords = [];
 let currentVideoIndex = 0;
 const videos = ['video1', 'video2', 'video3'];
+let passwordCounter = 1; // Contador para a numeração das senhas
 
 function addPassword() {
-    const newPassword = document.getElementById('newPassword').value;
-    if (newPassword) {
-        passwordQueue.push(newPassword);
-        document.getElementById('newPassword').value = '';
-        updatePasswordList();
-    }
+    // Cria a senha com número sequencial
+    const newPassword = String(passwordCounter).padStart(2, '0'); // Garante que a senha tenha 2 dígitos (01, 02, 03, etc.)
+    
+    // Adiciona a senha à fila
+    passwordQueue.push(newPassword);
+    
+    // Atualiza a lista de senhas
+    updatePasswordList();
+    
+    // Incrementa o contador para a próxima senha
+    passwordCounter++;
 }
 
 function updatePasswordList() {
@@ -30,10 +36,8 @@ function callNextPassword() {
         document.getElementById('currentPassword').innerText = currentPassword;
         document.getElementById('currentRoom').innerText = `Sala ${assignedRoom}`;
         
-        // Adiciona a senha chamada à lista de senhas chamadas
         calledPasswords.push({ password: currentPassword, room: assignedRoom });
 
-        // Se a lista de senhas chamadas ultrapassar 5, remove a mais antiga
         if (calledPasswords.length > 5) {
             calledPasswords.shift();
         }
