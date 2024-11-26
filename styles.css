@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 1200px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.current-password, .password-input, .password-output {
+    flex: 1;
+    margin: 0 5px;
+    text-align: left;
+}
+
+.current-password h2, .password-input h2, .password-output h2, .called-passwords h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#currentPassword, #currentRoom, #passwordList, #calledPasswordsList {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 50px;
+    margin-bottom: 10px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+input {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.video-carousel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    height: 300px;
+}
+
+.carousel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 1s ease-in-out;
+}
+
+.carousel-video.active {
+    left: 0;
+}
+
+.called-passwords {
+    text-align: left;
+}
+
+#passwordList, #calledPasswordsList, #currentPassword, #currentRoom {
+    width: 200px;
+}
+
+.password-output {
+    margin-left: 20px;
+}

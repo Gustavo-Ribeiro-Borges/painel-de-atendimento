@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Atendimento - Odonto FATEC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Atendimento - Odonto FATEC</h1>
+        <div class="video-carousel">
+            <video id="video1" class="carousel-video" src="videos/video1.mp4" type="video/mp4" muted></video>
+            <video id="video2" class="carousel-video" src="videos/video2.mp4" type="video/mp4" muted></video>
+            <video id="video3" class="carousel-video" src="videos/video3.mp4" type="video/mp4" muted></video>
+        </div>
+        <div class="panel">
+            <div class="current-password">
+                <h2>Senha Atual</h2>
+                <div id="currentPassword">Aguardando...</div>
+                <div id="currentRoom">---</div>
+            </div>
+            <div class="password-input">
+                <h2>Entrada de Senhas</h2>
+                <input type="text" id="newPassword" placeholder="Digite a nova senha">
+                <button onclick="addPassword()">Adicionar Senha</button>
+            </div>
+            <div class="password-output">
+                <h2>Saída de Senhas</h2>
+                <div id="passwordList">Nenhuma senha na fila</div>
+            </div>
+            <div class="called-passwords">
+                <h2>Senhas Chamadas</h2>
+                <div id="calledPasswordsList">Nenhuma senha chamada</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
